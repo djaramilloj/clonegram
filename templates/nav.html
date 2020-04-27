@@ -17,13 +17,16 @@
 
                 <li class="nav-item nav-icon">
                     <a href="">
-                        <i class="fas fa-plus"></i>
+                        <a href="">
+                            <img src="{% static 'imgs/default-profile.png' %}" height="25" class="d-inline-block align-top rounded-circle"/>
+                        </a>
+
                     </a>
                 </li>
 
                 <li class="nav-item nav-icon">
-                    <a href="">
-                        <i class="fas fa-sign-out-alt"></i>
+                    <a href="{% url "logout" %}">
+                        <img src="{% static 'imgs/default-profile.png' %}" height="25" class="d-inline-block align-top rounded-circle"/>
                     </a>
                 </li>
 
