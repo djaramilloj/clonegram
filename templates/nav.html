@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
     <div class="container">
 
-        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="">
+        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url 'feed' %}">
             <img src="{% static "imgs/instagram.png" %}" height="45" class="d-inline-block align-top"/>
         </a>
 
@@ -11,14 +11,18 @@
 
                 <li class="nav-item">
                     <a href="">
+                        {% if request.user.userprofile.profile_pic %}
+                        <img src="{{request.user.userprofile.profile_pic.url}}" height="35" class="d-inline-block align-top rounded-circle"/>
+                        {% else %}
                         <img src="{% static 'imgs/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
+                        {% endif %}
                     </a>
                 </li>
 
                 <li class="nav-item nav-icon">
                     <a href="">
-                        <a href="">
-                            <img src="{% static 'imgs/default-profile.png' %}" height="25" class="d-inline-block align-top rounded-circle"/>
+                        <a href="{% url 'create_post' %}">
+                            <img src="{% static 'imgs/plus.png' %}" height="25" class="d-inline-block align-top rounded-circle"/>
                         </a>
 
                     </a>
@@ -26,7 +30,7 @@
 
                 <li class="nav-item nav-icon">
                     <a href="{% url "logout" %}">
-                        <img src="{% static 'imgs/default-profile.png' %}" height="25" class="d-inline-block align-top rounded-circle"/>
+                            <img src="{% static 'imgs/logout.png' %}" height="28" class="d-inline-block align-top rounded-circle"/>
                     </a>
                 </li>
 
