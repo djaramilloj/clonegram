@@ -4,13 +4,6 @@ from django.contrib.auth.models import User
 from users.models import UserProfile
 
 
-class ProfileForm(forms.Form):
-    website = forms.URLField( max_length=200, required=True)
-    bio = forms.CharField(max_length=500, required=False)
-    phone_number = forms.CharField(max_length=20, required=False)
-    profile_pic = forms.ImageField()
-
-
 class SignUpForm(forms.Form):
     username = forms.CharField(min_length=4, max_length=50)
 

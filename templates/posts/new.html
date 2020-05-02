@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block container %}
-<div class="container">
+
+    <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-6 pt-3 pb-3" id="profile-box">
                 <h4 class="mb-4">Post a new photo!</h4>
 
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-
 
                     <input type="hidden" name="user" value="{{ user.pk}}" />
                     <input type="hidden" name="profile" value="{{ profile.pk }}" />
@@ -24,8 +24,6 @@
                             type="text"
                             name="title"
                             placeholder="Title"
-                            value="{% if form.errors %}{{form.title.value}}{% else %}{{ profile.title }}{% endif %}"
-
                         >
                         <div class="invalid-feedback">
                             {% for error in form.title.errors %}{{ error }}{% endfor %}
@@ -51,7 +49,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
-
-    
-

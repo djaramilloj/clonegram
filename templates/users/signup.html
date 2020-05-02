@@ -1,19 +1,17 @@
-{% extends 'users/base.html' %}
+{% extends "users/base.html" %}
 
 {% block head_content %}
-<title>Sin up</title>
+<title>Platzigram sign up</title>
 {% endblock %}
 
 {% block container %}
 
-    <form action="{% url 'signup' %}" method="POST">
-        <!-- This tag makes secure the form against csfr attacks -->
+    <form action="{% url 'users:signup' %}" method="POST">
         {% csrf_token %}
 
-        {{form.as_p}}
+        {{ form.as_p }}
 
-        <button type="submit" class="btn btn-primary btn-block mt-5">Sign Up</button>
-
+        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
 
     </form>
 
